@@ -1,0 +1,623 @@
+:root {
+
+  /* TIPOGRAFÍAS */
+
+  /* Para textos, títulos de sección, botones, navegación, formularios y tarjetas */
+  --fuente-principal: 'DM Sans', sans-serif;
+
+  /* Para logotipo, nombre del hero, saludo, indicador de disponibilidad y categorías de proyectos */
+  --fuente-mono: 'DM Mono', monospace;
+
+
+  /* COLORES SÓLIDOS */
+
+  /* Texto */
+  --texto-principal: #292B2B;           /* Texto principal de la página */
+  --texto-secundario: #6D716E;          /* Texto secundario y descripciones */
+
+  /* Fondos y bordes generales */
+  --fondo-pagina: #FBFAF7;              /* Fondo neutro general de la página */
+  --blanco: #FFFFFF;                    /* Fondos blancos de tarjetas, formularios y elementos */
+  --borde: #E7E4DD;                     /* Bordes y líneas divisorias generales */
+
+  /* Rosas */
+  --rosa: #EAB8C8;                      /* Rosa principal: botones, detalles y subrayados */
+  --rosa-claro: #FAEDF1;                /* Rosa claro: fondos suaves y estados hover */
+
+  /* Verdes */
+  --verde: #9FC9B0;                     /* Verde principal: disponibilidad y acentos */
+  --verde-pastel: #EDF6EF;              /* Verde pastel: fondos y estados hover */
+
+  /* Pasteles de grupos */
+  --azul-pastel: #EDF3F6;               /* Grupo de habilidades */
+  --amarillo-pastel: #FBF3D9;           /* Grupo de herramientas */
+  --lila-pastel: #F1EBF7;               /* Fondos y grupo de aprendizaje */
+
+  /* Logotipo y navegación */
+  --logo-punto: #BD728B;                /* Punto del logotipo y punto final del nombre */
+  --nav-enlace: #5E625F;                /* Enlaces de navegación */
+
+  /* Hero */
+  --hero-degradado-inicio: #FAE9EE;     /* Inicio del degradado rosado del hero */
+  --hero-degradado-centro: #F2CEDA;     /* Rosa central y más intenso del hero */
+  --hero-degradado-fin: #EADFF2;        /* Terminación lila del fondo del hero */
+  --disponibilidad-texto: #526057;      /* Texto del indicador de disponibilidad */
+  --hero-descripcion: #555C58;          /* Descripción principal del hero */
+
+  /* Botón principal y redes */
+  --boton-texto: #282120;               /* Texto del botón principal */
+  --boton-hover: #E3A5B9;               /* Fondo del botón principal al hacer hover */
+  --social-icono: #4D5550;              /* Íconos sociales de GitHub y LinkedIn */
+
+  /* Acerca de mí */
+  --acerca-texto: #565B58;              /* Texto de la sección "Acerca de mí" */
+
+  /* Mis habilidades */
+  --habilidades-fondo: #F7F6F2;         /* Fondo de la sección "Mis habilidades" */
+  --habilidad-borde: #ECE9E3;           /* Bordes de cada habilidad */
+  --tecnologia-nombre: #525753;         /* Nombre de las tecnologías */
+
+  /* Proyectos: navegador simulado y vistas previas */
+  --preview-barra-superior: #F8F8F6;    /* Barra superior de las vistas previas de proyectos */
+  --navegador-borde: #E7E6E1;           /* Borde de la barra de navegador simulada */
+  --navegador-puntos: #D6B0B8;          /* Puntos decorativos del navegador simulado */
+  --navegador-barra: #ECEBE7;           /* Barra decorativa dentro del navegador simulado */
+  --panel-borde: #EEECE7;               /* Bordes de los paneles laterales de proyectos */
+  --panel-icono: #765361;               /* Ícono del panel lateral de los proyectos */
+  --panel-lineas: #EEEAE8;              /* Líneas decorativas del panel lateral */
+  --preview-texto-secundario: #979B97;  /* Texto secundario de las vistas previas */
+  --preview-avatar: #F0EDE9;            /* Avatar simulado de las vistas previas */
+  --stat-borde: #EEEAE6;                /* Bordes de las tarjetas estadísticas */
+  --stat-etiqueta: #A1A29E;             /* Etiquetas estadísticas secundarias */
+  --stat-acento-lila: #B9A3D0;          /* Acentos lilas en las tarjetas estadísticas */
+  --grafico-fondo: #FAF9F7;             /* Fondo de los gráficos simulados */
+  --grafico-rosa: #E6AFC1;              /* Barras rosadas de los gráficos */
+  --grafico-verde: #99C9AC;             /* Barras verdes de los gráficos */
+  --grafico-lila: #BBA7D1;              /* Barras lilas de los gráficos */
+  --carrusel-activo: #464340;           /* Indicador activo de los carruseles */
+  --proyecto-categoria: #9D6477;        /* Categorías de los proyectos */
+  --tag-fondo: #F5F3EF;                 /* Fondo de etiquetas tecnológicas */
+  --tag-texto: #626763;                 /* Texto de las etiquetas tecnológicas */
+  --proyecto-abrir-icono: #8D5D6D;      /* Ícono para abrir un proyecto */
+
+  /* Contacto */
+  --contacto-fondo-inicio: #F8ECEF;     /* Inicio rosado del fondo de Contacto */
+  --contacto-fondo-fin: #EFF6F0;        /* Terminación verde del fondo de Contacto */
+  --contacto-descripcion: #5F6561;      /* Descripción de la sección Contacto */
+  --form-etiqueta: #4F544F;             /* Etiquetas del formulario */
+  --input-borde: #E4DFD8;               /* Bordes de inputs y textarea */
+  --input-placeholder: #A2A39F;         /* Texto placeholder del formulario */
+  --input-borde-activo: #D6A2B3;        /* Borde activo de inputs y textarea */
+
+  /* Footer */
+  --footer-fondo: #292C2A;              /* Fondo oscuro del footer */
+  --footer-texto: #F4F1EC;              /* Texto principal del footer */
+  --footer-texto-secundario: #AEB3AE;   /* Texto secundario del footer */
+  --footer-icono: #EEEAE5;              /* Íconos sociales del footer */
+
+
+  /* COLORES CON TRANSPARENCIA */
+
+  --sombra-tarjeta: #38322C14;          /* Sombra general de tarjetas y fotografía */
+
+  --nav-fondo: #FBFAF7DB;               /* Fondo translúcido de la barra de navegación */
+  --nav-borde: #E7E4DDCC;              /* Borde translúcido de la barra de navegación */
+
+  --hero-luz-blanca: #FFFFFFB8;         /* Iluminación blanca detrás del texto del hero */
+  --hero-mancha-lila: #E1C9EBB8;        /* Mancha lila decorativa del hero */
+  --hero-mancha-verde: #DCEEE194;       /* Mancha verde decorativa del hero */
+  --hero-mancha-verde-movil: #DCEEE180; /* Variante móvil de la mancha verde del hero */
+
+  --disponibilidad-resplandor: #9FC9B033; /* Resplandor del indicador verde de disponibilidad */
+
+  --boton-sombra: #AB637A29;            /* Sombra normal del botón principal */
+  --boton-sombra-hover: #AB637A38;      /* Sombra hover del botón principal */
+
+  --boton-secundario-fondo: #FFFFFFAD;  /* Fondo translúcido del botón secundario */
+  --boton-secundario-borde: #594E4929;  /* Borde del botón secundario */
+  --social-borde: #594E4924;            /* Borde de los botones sociales */
+  --social-fondo: #FFFFFFB2;            /* Fondo translúcido de los botones sociales */
+
+  --sombra-suave: #3935300A;            /* Sombra muy suave de tarjetas */
+  --habilidad-sombra: #2F2D2A12;        /* Sombra normal de las habilidades */
+  --habilidad-sombra-hover: #2F2D2A1F;  /* Sombra hover de las habilidades */
+
+  --flecha-borde: #3A35311A;            /* Borde de las flechas del carrusel */
+  --flecha-fondo: #FFFFFFE6;            /* Fondo de las flechas del carrusel */
+  --flecha-sombra: #25201E1F;           /* Sombra de las flechas del carrusel */
+  --carrusel-inactivo: #33302E4C;       /* Indicadores inactivos del carrusel */
+
+  --form-borde: #7666611F;              /* Borde translúcido del formulario */
+  --form-fondo: #FFFFFFC7;              /* Fondo translúcido del formulario */
+  --input-fondo: #FFFFFFD6;             /* Fondo translúcido de inputs y textarea */
+  --form-foco: #EAB8C833;               /* Resplandor de foco del formulario */
+
+  --footer-social-fondo: #FFFFFF0F;     /* Fondo de los íconos sociales del footer */
+  --footer-social-borde: #FFFFFF1A;     /* Borde de los íconos sociales del footer */
+
+  --menu-movil-fondo: #FFFFFFF7;        /* Fondo del menú móvil desplegado */
+
+  --transparente: #00000000;            /* Transparencia completa en degradados */
+
+
+  /* Reedefinir colores de bootstrap */
+
+  /* Tipografía base */
+  --bs-body-font-family: var(--fuente-principal);
+
+  /* Colores base del body */
+  --bs-body-color: var(--texto-principal);
+  --bs-body-bg: var(--fondo-pagina);
+  --bs-secondary-color: var(--texto-secundario);
+  --bs-border-color: var(--borde);
+
+  /* Enlaces */
+  --bs-link-color: var(--proyecto-categoria);
+  --bs-link-hover-color: var(--logo-punto);
+
+  /* Color de foco de Bootstrap */
+  --bs-focus-ring-color: var(--form-foco);
+}  
+
+/* NAVEGADOR */
+
+/* Barra de navegación */
+.navbar {
+  background-color: var(--fondo-pagina) !important;
+  border-bottom: 1px solid var(--borde);
+  padding: 18px 0;
+}
+
+/* Contenedor: más espacio a los costados */
+.navbar > .container-lg {
+  position: relative;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Logotipo */
+.navbar .navbar-brand {
+  color: var(--texto-principal);
+  font-family: var(--fuente-mono);
+  font-size: 20px;
+  font-weight: 700;
+  transition: color 0.25s ease;
+  cursor: default;
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--logo-punto);
+}
+
+/* Enlaces de navegación */
+.navbar .nav-link {
+  color: var(--nav-enlace);
+  font-size: 15px;
+  padding: 10px 12px;
+  transition: background-color 0.25s ease;
+}
+
+/* Botón hamburguesa */
+.navbar .navbar-toggler{
+  width: 44px;
+  height: 42px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  color: var(--texto-principal);
+  box-shadow: none;
+}
+
+/* Quitar resplandor de bootstrap */
+.navbar .navbar-toggler:focus{
+  box-shadow: none;
+}
+
+/* Íconos del botón */
+.navbar-toggler .icono-abrir{
+  font-size: 22px;
+  line-height: 1;
+}
+
+.navbar .navbar-toggler .icono-cerrar {
+  display: none; /* Inicialmente este icono debe estar oculto*/
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Menú abierto: se oculta la hamburguesa y aparece la x */
+.navbar .navbar-toggler[aria-expanded="true"] .icono-abrir{
+  display: none;
+}
+.navbar .navbar-toggler[aria-expanded="true"] .icono-cerrar{
+  display: inline;
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+
+  /* Ocultar botón hamburguesa */
+  .navbar .navbar-toggler {
+    display: none;
+  }
+
+  /* Espacio entre enlaces */
+  .navbar .navbar-nav {
+    gap: 30px;
+  }
+
+  /* Preparar cada enlace para la subrayado */
+  .navbar .nav-underline .nav-link {
+    position: relative;
+    border-bottom: none !important;
+  }
+
+  /* Línea rosa animada */
+  .navbar .nav-underline .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px; /* Ajustar ditancia vertical*/
+    width: 100%;
+    height: 2px;
+    background-color: var(--rosa);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  /* Mostrar la línea al pasar el cursor */
+  .navbar .nav-underline .nav-link:hover::after,
+  .navbar .nav-underline .nav-link.active::after {
+    transform: scaleX(1);
+  }
+
+}
+
+
+@media (max-width: 1023.98px) {
+
+  /* Menú desplegable */
+  .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 8px) !important;  /* separar boton y menú desplegable */
+    left: 12px;
+    right: 12px;
+    z-index: 1000;
+    padding: 16px 20px;
+    background-color: var(--menu-movil-fondo);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px var(--sombra-tarjeta); 
+  }
+
+   /* Separación entre enlaces */
+  .navbar .navbar-nav {
+    gap: 4px;
+  }
+
+  /* Eliminar líneas debajo de los enlaces */
+  .navbar .nav-underline .nav-link,
+  .navbar .nav-underline .nav-link.active {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    text-decoration: none;
+  }
+
+  /* Eliminar decoraciones adicionales */
+  .navbar .nav-underline .nav-link::after {
+    display: none !important;
+  }
+
+  /* espaciado y forma de los enlaces */
+  .navbar .nav-link {
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  /* Hover de los enlaces */
+  .navbar .nav-link:hover {
+    background-color: var(--rosa-claro);
+  }
+}
+
+/* INICIO */
+
+/* Fondo degradado y distribución vertical */
+.hero {
+  background: linear-gradient(
+    110deg,
+    var(--hero-degradado-inicio) 0%,
+    var(--hero-degradado-centro) 55%,
+    var(--hero-degradado-fin) 100%
+  );
+
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 64px 0 80px;
+  overflow: hidden;
+}
+
+/* El contenedor ocupa el ancho disponible */
+.hero > .container {
+  width: 100%;
+}
+
+/* Columna de presentación */
+.hero-contenido {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/* Indicador de disponibilidad */
+.hero-disponibilidad {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  color: var(--disponibilidad-texto);
+  font-family: var(--fuente-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+/* Punto verde con halo */
+.hero-disponibilidad::before {
+  content: "";
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--verde);
+  box-shadow: 0 0 0 6px var(--disponibilidad-resplandor);
+}
+
+/* Saludo */
+.hero-saludo {
+  margin-bottom: 4px;
+  color: var(--texto-principal);
+  font-family: var(--fuente-mono);
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+/* Nombre */
+.hero h1 {
+  margin: 0 0 20px;
+  color: var(--texto-principal);
+  font-family: var(--fuente-mono);
+  font-size: clamp(48px, 6vw, 100px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  overflow-wrap: anywhere;
+}
+
+/* Punto rosa al final del nombre */
+.hero h1 span {
+  color: var(--logo-punto);
+}
+
+/* Profesión */
+.hero-profesion {
+  margin-bottom: 28px;
+  color: var(--texto-principal);
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Descripción */
+.hero-descripcion {
+  max-width: 690px;
+  margin-bottom: 38px;
+  color: var(--hero-descripcion);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* Grupo de botones y redes sociales */
+.hero-acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Estilos comunes de los enlaces de acción */
+.hero-boton {
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  color: var(--boton-texto);
+  font-family: var(--fuente-principal);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Botón de descarga del CV */
+.hero-boton-secundario {
+  background-color: var(--boton-secundario-fondo);
+  border-color: var(--boton-secundario-borde);
+}
+
+.hero-boton-secundario:hover {
+  background-color: var(--blanco);
+  border-color: var(--borde);
+  transform: translateY(-2px);
+}
+
+.hero-boton-secundario i {
+  font-size: 20px;
+}
+
+/* Botones circulares de GitHub y LinkedIn */
+.hero-boton-social {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-color: var(--social-borde);
+  border-radius: 50%;
+  background-color: var(--social-fondo);
+  color: var(--social-icono);
+  font-size: 23px;
+}
+
+.hero-boton-social:hover {
+  background-color: var(--blanco);
+  border-color: var(--borde);
+  transform: translateY(-2px);
+}
+
+/* Fotografía */
+.hero-foto-columna {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-foto {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+}
+
+/* Inicio en Tablets */
+@media (max-width: 1023.98px) {
+  .hero {
+    min-height: auto;
+    padding: 56px 0 64px;
+  }
+
+  .hero-disponibilidad {
+    margin-bottom: 36px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 7vw, 72px);
+  }
+
+  .hero-descripcion {
+    font-size: 18px;
+  }
+
+  /* Centrar la foto cuando las columnas se apilan */
+  .hero-foto-columna {
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .hero-foto {
+    max-width: 400px;
+  }
+}
+
+/* Inicio en celulares*/
+@media (max-width: 575.98px) {
+  .hero {
+    padding: 42px 0 48px;
+  }
+
+  .hero-contenido {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-disponibilidad {
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 10px;
+    letter-spacing: 0.025em;
+  }
+
+  .hero-disponibilidad::before {
+    flex-basis: 10px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-saludo {
+    font-size: 20px;
+  }
+
+  .hero h1 {
+    margin-bottom: 16px;
+    font-size: clamp(38px, 10vw, 56px);
+    letter-spacing: -0.06em;
+  }
+
+  .hero-profesion {
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+
+  .hero-descripcion {
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* Botones adaptables a varias filas */
+  .hero-acciones {
+    gap: 10px;
+  }
+
+  .hero-boton {
+    min-height: 50px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .hero-boton-secundario {
+    flex: 1 1 160px;
+  }
+
+  .hero-boton-social {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    font-size: 21px;
+  }
+
+  .hero-foto-columna {
+    margin-top: 36px;
+  }
+
+  .hero-foto {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+}
+
+/* Respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .hero-boton {
+    transition: none;
+  }
+
+  .navbar .nav-underline .nav-link::after {
+    transition: none;
+  }
+}
+
