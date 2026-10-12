@@ -18,7 +18,7 @@
   /* Fondos y bordes generales */
   --fondo-pagina: #FBFAF7;              /* Fondo neutro general de la página */
   --blanco: #FFFFFF;                    /* Fondos blancos de tarjetas, formularios y elementos */
-  --borde: #E7E4DD;                     /* Bordes y líneas divisorias generales */
+  --borde: #cbc8bf;                     /* Bordes y líneas divisorias generales */
 
   /* Rosas */
   --rosa: #EAB8C8;                      /* Rosa principal: botones, detalles y subrayados */
@@ -157,7 +157,7 @@
 
   /* Color de foco de Bootstrap */
   --bs-focus-ring-color: var(--form-foco);
-}  
+} 
 
 /* NAVEGADOR */
 
@@ -166,6 +166,23 @@
   background-color: var(--fondo-pagina) !important;
   border-bottom: 1px solid var(--borde);
   padding: 18px 0;
+}
+
+/* Al navegar a una sección (#proyectos, etc.), deja espacio para que el navbar no la tape */
+html {
+  scroll-padding-top: 77px;
+}
+
+/* Desplazamiento suave, solo si la persona no pidió reducir animaciones */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Espacio reservado para que el navbar no tape el contenido */
+body {
+  padding-top: 77px;
 }
 
 /* Contenedor: más espacio a los costados */
@@ -237,92 +254,47 @@
   display: inline;
 }
 
-/* Escritorio */
-@media (min-width: 1024px) {
+/* ESTILOS GENERALES DE LAS SECCIONES */
 
-  /* Ocultar botón hamburguesa */
-  .navbar .navbar-toggler {
-    display: none;
-  }
-
-  /* Espacio entre enlaces */
-  .navbar .navbar-nav {
-    gap: 30px;
-  }
-
-  /* Preparar cada enlace para la subrayado */
-  .navbar .nav-underline .nav-link {
-    position: relative;
-    border-bottom: none !important;
-  }
-
-  /* Línea rosa animada */
-  .navbar .nav-underline .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 4px; /* Ajustar ditancia vertical*/
-    width: 100%;
-    height: 2px;
-    background-color: var(--rosa);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  /* Mostrar la línea al pasar el cursor */
-  .navbar .nav-underline .nav-link:hover::after,
-  .navbar .nav-underline .nav-link.active::after {
-    transform: scaleX(1);
-  }
-
+/* Estilo compartido por todos los títulos */
+.titulo-seccion {
+  position: relative;
+  margin: 0 0 48px;
+  padding-bottom: 16px;
+  color: var(--texto-principal);
+  font-family: var(--fuente-principal);
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
 }
 
+/* Línea decorativa debajo del título */
+.titulo-seccion::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 72px;
+  height: 5px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--rosa) 0%,
+    var(--verde) 100%
+  );
+  transform: translateX(-50%);
+}
 
-@media (max-width: 1023.98px) {
-
-  /* Menú desplegable */
-  .navbar-collapse {
-    position: absolute;
-    top: calc(100% + 8px) !important;  /* separar boton y menú desplegable */
-    left: 12px;
-    right: 12px;
-    z-index: 1000;
-    padding: 16px 20px;
-    background-color: var(--menu-movil-fondo);
-    border: 1px solid var(--borde);
-    border-radius: 16px;
-    box-shadow: 0 16px 40px var(--sombra-tarjeta); 
-  }
-
-   /* Separación entre enlaces */
-  .navbar .navbar-nav {
-    gap: 4px;
-  }
-
-  /* Eliminar líneas debajo de los enlaces */
-  .navbar .nav-underline .nav-link,
-  .navbar .nav-underline .nav-link.active {
-    border-bottom: none !important;
-    box-shadow: none !important;
-    text-decoration: none;
-  }
-
-  /* Eliminar decoraciones adicionales */
-  .navbar .nav-underline .nav-link::after {
-    display: none !important;
-  }
-
-  /* espaciado y forma de los enlaces */
-  .navbar .nav-link {
-    padding: 10px 12px;
-    border-radius: 8px;
-  }
-
-  /* Hover de los enlaces */
-  .navbar .nav-link:hover {
-    background-color: var(--rosa-claro);
-  }
+/* Clase general reutilizable para párrafos descriptivos */
+.texto-descriptivo {
+  margin: 0 0 30px;
+  color: var(--acerca-texto);
+  font-family: var(--fuente-principal);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: center;
 }
 
 /* INICIO */
@@ -502,8 +474,895 @@
   border-radius: 24px;
 }
 
+/* ACERCA DE MÍ */
+
+/* Sección general */
+.acerca {
+  padding: 80px 0 36px;
+  background-color: var(--blanco);
+}
+
+/* Contenedor de los dos párrafos */
+.acerca-descripcion {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Resaltar las tecnologías */
+.texto-descriptivo strong {
+  color: var(--texto-principal);
+  font-weight: 700;
+}
+
+/* Separador horizontal */
+.acerca-separador {
+  margin: 54px 0 32px;
+  border: 0;
+  border-top: 1px solid var(--borde);
+  opacity: 1;
+}
+
+/* Fila de características */
+.acerca-caracteristicas {
+  align-items: center;
+  text-align: center;
+}
+
+/* Cada característica */
+.acerca-caracteristica {
+  padding: 0 20px;
+}
+
+/* Divisores verticales entre las características */
+.acerca-caracteristica + .acerca-caracteristica {
+  border-left: 1px solid var(--borde);
+}
+
+/* Títulos: Full Stack, Resolutiva y Colaborativa */
+.acerca-caracteristica h5 {
+  margin: 0 0 6px;
+  color: var(--texto-principal);
+  font-family: var(--fuente-principal);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Texto debajo de cada característica */
+.acerca-parrafo {
+  margin: 0;
+  color: var(--texto-secundario);
+  font-family: var(--fuente-principal);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* MIS HABILIDADES */
+
+/* Fondo y espaciado de la sección */
+.habilidades {
+  padding: 70px 0 0;
+  background-color: var(--habilidades-fondo);
+}
+
+/* Ajuste del título de Habilidades */
+.habilidades .titulo-seccion {
+    margin-bottom: 16px;
+}
+
+/* Título de cada categoría: Frontend, Backend, etc. */
+.habilidades .card-title {
+  margin: 0 0 26px;
+  color: var(--texto-principal);
+  font-family: var(--fuente-principal);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Cajas principales de categorías */
+.habilidades .row > div > .card {
+  height: 100%;
+  min-height: 337px;
+  background-color: var(--blanco);
+  border: 1px solid var(--habilidad-borde);
+  border-radius: 22px;
+  box-shadow: none;
+}
+
+/* Interior de las cajas principales */
+.habilidades .row > div > .card > .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 24px;
+}
+
+/* Contenedor de los iconos de cada categoría */
+.habilidades .card-body > .d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 12px !important;
+  width: 100%;
+}
+
+/* Tarjetas individuales de las tecnologías */
+.habilidades .card-body > .d-flex > .card {
+  width: 96px;
+  min-height: 110px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--blanco);
+  border: 1px solid var(--habilidad-borde);
+  border-radius: 16px;
+  box-shadow: 0 8px 18px var(--habilidad-sombra);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Tamaño y alineación de los logos */
+.habilidades .tecnologia-logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  object-fit: contain;
+}
+
+/* Nombre de cada tecnología */
+.habilidades .card-body > .d-flex > .card p {
+  margin: 0;
+  color: var(--tecnologia-nombre);
+  font-family: var(--fuente-principal);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* Efecto al pasar el cursor */
+.habilidades .card-body > .d-flex > .card:hover {
+  transform: translateY(-4px);
+  border-color: var(--borde);
+  box-shadow: 0 12px 24px var(--habilidad-sombra-hover);
+}
+
+/* MIS PROYECTOS */
+
+/* Sección general */
+.proyectos {
+  padding: 80px 0;
+  background-color: var(--blanco);
+}
+
+/* Título de la sección */
+.proyectos .titulo-seccion {
+  margin-bottom: 20px;
+}
+
+/* Descripción debajo del título */
+.proyectos .texto-descriptivo {
+  max-width: 850px;
+  margin: 0 auto 56px;
+  color: var(--texto-secundario);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Tarjeta completa del proyecto */
+.proyecto-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  background-color: var(--blanco);
+  border: 1px solid var(--habilidad-borde);
+  border-radius: 24px;
+  box-shadow: 0 8px 24px var(--sombra-tarjeta);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Elevación sutil al pasar el cursor */
+.proyecto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px var(--habilidad-sombra-hover);
+}
+
+/* Vista previa y fondo pastel */
+.proyecto-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 15 / 7;
+  padding: 10px 12px 0;
+  overflow: hidden;
+}
+
+/* Variantes de color */
+.preview-rosa {
+  background-color: var(--rosa-claro);
+}
+
+.preview-verde {
+  background-color: var(--verde-pastel);
+}
+
+.preview-lila {
+  background-color: var(--lila-pastel);
+}
+
+.preview-azul {
+  background-color: var(--azul-pastel);
+}
+
+/* Ventana que contiene las capturas */
+.proyecto-preview .preview-ventana {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-color: var(--blanco);
+  border: 1px solid var(--navegador-borde);
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+}
+
+/* El carrusel ocupa toda la ventana */
+.proyecto-preview .carousel-inner,
+.proyecto-preview .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+/* Capturas de los proyectos */
+.proyecto-imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* Indicadores inferiores */
+.proyecto-indicadores {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  left: 0;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  margin: 0;
+}
+
+.proyecto-indicadores [data-bs-target] {
+  width: 7px;
+  height: 7px;
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--carrusel-inactivo);
+  opacity: 0.65;
+}
+
+.proyecto-indicadores .active {
+  width: 20px;
+  border-radius: 8px;
+  background-color: var(--carrusel-activo);
+  opacity: 1;
+}
+
+/* Flechas del carrusel */
+.proyecto-flecha {
+  width: 15%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.proyecto-preview:hover .proyecto-flecha,
+.proyecto-flecha:focus-visible {
+  opacity: 1;
+}
+
+/* Fondo de las flechas */
+.proyecto-flecha .carousel-control-prev-icon,
+.proyecto-flecha .carousel-control-next-icon {
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+
+  border-radius: 50%;
+  background-color: #292B2B;
+  background-size: 50%;
+  filter: none;
+}
+
+/* Contador de capturas */
+.proyecto-contador {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 6;
+
+  padding: 5px 9px;
+  color: var(--texto-secundario);
+  background-color: var(--flecha-fondo);
+  border: 1px solid var(--navegador-borde);
+  border-radius: 20px;
+
+  font-family: var(--fuente-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Información del proyecto */
+.proyecto-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 26px 26px;
+}
+
+/* Categoría */
+.proyecto-categoria {
+  margin-bottom: 14px;
+
+  color: var(--proyecto-categoria);
+  font-family: var(--fuente-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* Variantes de color para las categorías */
+.categoria-rosa {
+  color: #BD728B;
+}
+
+.categoria-verde {
+  color: #6D9C80;
+}
+
+.categoria-lila {
+  color: #8876B2;
+}
+
+.categoria-azul {
+  color: #668BAE;
+}
+
+/* Nombre del proyecto */
+.proyecto-titulo {
+  margin: 0 0 16px;
+
+  color: var(--texto-principal);
+  font-family: var(--fuente-principal);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Descripción */
+.proyecto-descripcion {
+  margin: 0 0 26px;
+
+  color: var(--texto-secundario);
+  font-family: var(--fuente-principal);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* Pie de la tarjeta */
+.proyecto-pie {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  border-top: 1px solid var(--borde);
+}
+
+/* Etiquetas de tecnologías */
+.proyecto-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.proyecto-tecnologias span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 10px;
+  color: var(--tag-texto);
+  background-color: var(--tag-fondo);
+  border: 1px solid var(--habilidad-borde);
+  border-radius: 8px;
+
+  font-family: var(--fuente-principal);
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* Enlace al repositorio */
+.proyecto-repositorio {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  color: var(--proyecto-abrir-icono);
+  background-color: var(--rosa-claro);
+  border: 1px solid #E8D7DE;
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.proyecto-repositorio .bi-github {
+  font-size: 19px;
+}
+
+.proyecto-repositorio .bi-arrow-up-right {
+  margin-left: auto;
+}
+
+.proyecto-repositorio:hover {
+  color: var(--texto-principal);
+  background-color: #F5E7EC;
+  border-color: #D9B9C5;
+  transform: translateY(-1px);
+}
+
+.proyecto-repositorio:focus-visible {
+  outline: 3px solid var(--form-foco);
+  outline-offset: 3px;
+}
+
+/* CONTACTO */
+
+/* Fondo y distribución general */
+.contacto {
+  padding: 80px 0 96px;
+  background: linear-gradient(
+    115deg,
+    var(--contacto-fondo-inicio) 0%,
+    #F7F2F1 48%,
+    var(--contacto-fondo-fin) 100%
+  );
+}
+
+.contacto > .container {
+  max-width: 1500px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.contacto-fila {
+  row-gap: 32px;
+}
+
+/* Columna del texto */
+.contacto-texto {
+  padding-right: 40px;
+}
+
+/* Título alineado a la izquierda */
+.contacto .titulo-seccion {
+  margin: 0 0 30px;
+  padding-bottom: 16px;
+  font-size: clamp(34px, 3.2vw, 52px);
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Línea decorativa del título */
+.contacto .titulo-seccion::after {
+  left: 0;
+  width: 73px;
+  height: 5px;
+  transform: none;
+}
+
+/* Descripción */
+.contacto-descripcion {
+  margin: 0 0 32px;
+  color: var(--contacto-descripcion);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* Pregunta destacada */
+.contacto-pregunta {
+  margin: 0 0 8px;
+  color: var(--texto-principal);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Texto complementario */
+.contacto-indicacion {
+  display: block;
+  color: var(--texto-secundario);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Columna del formulario */
+.contacto-form-columna {
+  padding-left: 16px;
+}
+
+/* Tarjeta blanca del formulario */
+.contacto-form {
+  padding: 36px 35px;
+  background-color: var(--form-fondo);
+  border: 1px solid var(--form-borde);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px var(--sombra-tarjeta);
+}
+
+/* Nombre y email en dos columnas */
+.contacto-campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+/* Grupo de cada campo */
+.contacto-form .form-group {
+  min-width: 0;
+}
+
+/* Etiquetas */
+.contacto-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--form-etiqueta);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Inputs y área del mensaje */
+.contacto-form .form-control {
+  width: 100%;
+  min-height: 57px;
+  padding: 15px 16px;
+
+  color: var(--texto-principal);
+  background-color: var(--input-fondo);
+  border: 1px solid var(--input-borde);
+  border-radius: 12px;
+
+  font-family: var(--fuente-principal);
+  font-size: 15px;
+  font-weight: 500;
+
+  box-shadow: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Texto de ejemplo */
+.contacto-form .form-control::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+/* Estado de foco */
+.contacto-form .form-control:focus {
+  background-color: var(--blanco);
+  border-color: var(--input-borde-activo);
+  box-shadow: 0 0 0 4px var(--form-foco);
+  outline: none;
+}
+
+/* Área del mensaje */
+.contacto-mensaje {
+  margin-top: 21px;
+}
+
+.contacto-form textarea.form-control {
+  min-height: 132px;
+  resize: vertical;
+}
+
+/* Botón de envío */
+.contacto-boton {
+  width: 100%;
+  min-height: 57px;
+  margin-top: 24px;
+  padding: 15px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  color: var(--boton-texto);
+  background-color: var(--rosa);
+  border: 1px solid transparent;
+  border-radius: 13px;
+
+  font-family: var(--fuente-principal);
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+  box-shadow: 0 10px 24px var(--boton-sombra);
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Ícono del botón */
+.contacto-boton i {
+  font-size: 23px;
+  line-height: 1;
+}
+
+/* Hover del botón */
+.contacto-boton:hover {
+  background-color: var(--boton-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px var(--boton-sombra-hover);
+}
+
+/* Foco accesible */
+.contacto-boton:focus-visible {
+  outline: 3px solid var(--input-borde-activo);
+  outline-offset: 4px;
+}
+
+/* Mensaje de estado del formulario */
+.form-estado {
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Si no hay mensaje, no ocupa espacio */
+.form-estado:empty {
+  display: none;
+}
+
+.form-estado.enviando {
+  color: var(--texto-secundario);
+  background-color: var(--blanco);
+  border-color: var(--borde);
+}
+
+.form-estado.exito {
+  color: var(--disponibilidad-texto);
+  background-color: var(--verde-pastel);
+  border-color: var(--verde);
+}
+
+.form-estado.error {
+  color: var(--proyecto-categoria);
+  background-color: var(--rosa-claro);
+  border-color: var(--rosa);
+}
+
+/* Botón mientras se está enviando (el JS lo deshabilita) */
+.contacto-boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 32px 0;
+  color: var(--footer-texto);
+  background-color: var(--footer-fondo);
+}
+
+.footer > .container {
+  max-width: 1500px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Distribución del contenido del footer */
+.footer-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Copyright */
+.footer-copyright {
+  margin: 0;
+  color: var(--footer-texto);
+  font-size: 14px;
+}
+
+/* Frase central */
+.footer-frase {
+  margin: 0;
+  color: var(--footer-texto-secundario);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Redes sociales */
+.footer-redes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botones circulares */
+.footer-social {
+  width: 46px;
+  height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--footer-icono);
+  background-color: var(--footer-social-fondo);
+  border: 1px solid var(--footer-social-borde);
+  border-radius: 50%;
+
+  font-size: 21px;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-social:hover {
+  color: var(--footer-icono);
+  background-color: #FFFFFF20;
+  transform: translateY(-2px);
+}
+
+.footer-social:focus-visible {
+  outline: 2px solid var(--rosa);
+  outline-offset: 3px;
+}
+
+/* Escritorio */
+@media (min-width: 992px) {
+
+  /* Ocultar botón hamburguesa */
+  .navbar .navbar-toggler {
+    display: none;
+  }
+
+  /* Espacio entre enlaces */
+  .navbar .navbar-nav {
+    gap: 30px;
+  }
+
+  /* Preparar cada enlace para la subrayado */
+  .navbar .nav-underline .nav-link {
+    position: relative;
+    border-bottom: none !important;
+  }
+
+  /* Línea rosa animada */
+  .navbar .nav-underline .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px; /* Ajustar ditancia vertical*/
+    width: 100%;
+    height: 2px;
+    background-color: var(--rosa);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  /* Mostrar la línea al pasar el cursor */
+  .navbar .nav-underline .nav-link:hover::after,
+  .navbar .nav-underline .nav-link.active::after {
+    transform: scaleX(1);
+  }
+
+}
+
 /* Inicio en Tablets */
-@media (max-width: 1023.98px) {
+@media (max-width: 991.98px) {
+
+  /* PARA NAVEGADOR */
+
+  /* Menú desplegable */
+  .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 8px) !important;  /* separar boton y menú desplegable */
+    left: 12px;
+    right: 12px;
+    z-index: 1000;
+    padding: 16px 20px;
+    background-color: var(--menu-movil-fondo);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px var(--sombra-tarjeta); 
+  }
+
+   /* Separación entre enlaces */
+  .navbar .navbar-nav {
+    gap: 4px;
+  }
+
+  /* Eliminar líneas debajo de los enlaces */
+  .navbar .nav-underline .nav-link,
+  .navbar .nav-underline .nav-link.active {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    text-decoration: none;
+  }
+
+  /* Eliminar decoraciones adicionales */
+  .navbar .nav-underline .nav-link::after {
+    display: none !important;
+  }
+
+  /* espaciado y forma de los enlaces */
+  .navbar .nav-link {
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  /* Hover de los enlaces */
+  .navbar .nav-link:hover {
+    background-color: var(--rosa-claro);
+  }
+
+  /* PARA SECCIÓN INICIO */
+
   .hero {
     min-height: auto;
     padding: 56px 0 64px;
@@ -530,10 +1389,148 @@
   .hero-foto {
     max-width: 400px;
   }
+
+  /* SECCIÓN CONTACTO */
+  .contacto {
+    padding: 64px 0 72px;
+  }
+
+  .contacto-texto {
+    padding-right: 12px;
+  }
+
+  .contacto-form-columna {
+    padding-left: 12px;
+  }
+
+  .contacto-form {
+    padding: 30px 26px;
+  }
 }
 
-/* Inicio en celulares*/
+/* AJUSTES DE HABILIDADES Y PROYECTOS PARA TABLETS */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  /* SECCIÓN HABILIDADES */
+
+  /* Reducir el espacio interior de las cajas principales */
+  .habilidades .row > div > .card > .card-body {
+    padding: 24px 10px;
+  }
+
+  /* Reducir el espacio entre tecnologías */
+  .habilidades .card-body > .d-flex {
+    gap: 8px !important;
+  }
+
+  /* Tarjetas de tecnologías más compactas */
+  .habilidades .card-body > .d-flex > .card {
+    width: 78px;
+    min-height: 100px;
+    padding: 10px 4px;
+    gap: 8px;
+  }
+
+  /* Logos */
+  .habilidades .tecnologia-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Nombres */
+  .habilidades .card-body > .d-flex > .card p {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  /* SECCIÓN PROYECTOS */
+  .proyecto-info {
+    padding: 26px 20px 22px;
+  }
+
+  .proyecto-titulo {
+    font-size: 23px;
+  }
+
+  .proyecto-tecnologias {
+    gap: 6px;
+  }
+
+  .proyecto-tecnologias span {
+    font-size: 11px;
+  }
+}
+
+/* Adaptación para tablets */
+@media (max-width: 767.98px) {
+
+  /* SECCIÓN ACERCA DE MI*/
+
+  .acerca {
+    padding: 64px 0 32px;
+  }
+
+  .titulo-seccion {
+    margin-bottom: 36px;
+  }
+
+  .texto-descriptivo {
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .acerca-separador {
+    display: none;
+  }
+
+  .acerca-caracteristica {
+    padding: 18px 12px;
+    text-align: center;
+  }
+
+  /* En pantallas pequeñas, los divisores pasan a ser horizontales */
+  .acerca-caracteristica + .acerca-caracteristica {
+    border-left: none;
+    border-top: 1px solid var(--borde);
+  }
+
+  /* SECCIÓN PROYECTOS */
+
+  .proyectos {
+    padding: 56px 0;
+  }
+
+  .proyectos .texto-descriptivo {
+    margin-bottom: 36px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .proyecto-preview {
+    aspect-ratio: 16 / 7.5;
+    padding: 8px 8px 0;
+  }
+
+  .proyecto-info {
+    padding: 26px 20px 22px;
+  }
+
+  .proyecto-titulo {
+    font-size: 23px;
+  }
+
+  /* Las flechas siempre están visibles en pantallas táctiles */
+  .proyecto-flecha {
+    opacity: 1;
+  }
+}
+
+/* CELULARES */
 @media (max-width: 575.98px) {
+
+  /* PARA SECCIÓN PRINCIPAL */
+
   .hero {
     padding: 42px 0 48px;
   }
@@ -608,16 +1605,173 @@
     max-width: 100%;
     border-radius: 20px;
   }
+
+  /* PARA SECCIÓN ACERCA DE MI */
+
+  .acerca {
+    padding: 48px 0 24px;
+  }
+
+  .titulo-seccion {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .texto-descriptivo {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .acerca-caracteristica h5 {
+    font-size: 17px;
+  }
+
+  .acerca-parrafo {
+    font-size: 14px;
+  }
+
+  /* PARA SECCIÓN CONTACTO */
+
+  .contacto {
+    padding: 48px 0 56px;
+  }
+
+  .contacto > .container,
+  .footer > .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contacto-fila {
+    row-gap: 30px;
+  }
+
+  .contacto .titulo-seccion {
+    margin-bottom: 26px;
+    font-size: 34px;
+  }
+
+  .contacto-descripcion {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .contacto-pregunta {
+    font-size: 18px;
+  }
+
+  .contacto-indicacion {
+    font-size: 15px;
+  }
+
+  .contacto-form-columna {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .contacto-form {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  /* Apilar nombre y email */
+  .contacto-campos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .contacto-form .form-control {
+    min-height: 53px;
+    font-size: 14px;
+  }
+
+  .contacto-form textarea.form-control {
+    min-height: 125px;
+  }
+
+  .contacto-mensaje {
+    margin-top: 20px;
+  }
+
+  .contacto-boton {
+    min-height: 54px;
+    margin-top: 20px;
+  }
+
+  
+  /* PARA FOOTER */
+  
+  /* Reduce el espacio vertical del footer */
+  .footer {
+    padding: 28px 0;
+  }
+  
+  /* Mantiene el copyright a la izquierda y las redes a la derecha */
+  .footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  /* Evita que el copyright ocupe más espacio del necesario */
+  .footer-copyright {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 150px;
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  /* Mantiene los iconos pegados al lado derecho */
+  .footer-redes {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+  
+  /* Conserva el tamaño de los botones sociales */
+  .footer-social {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+  }
+  
+  /* Oculta la frase en celulares */
+  .footer-frase {
+    display: none;
+  }
+
 }
 
-/* Respetar la preferencia de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
-  .hero-boton {
+  .hero-boton,
+  .navbar .nav-underline .nav-link::after,
+  .habilidades .card-body > .d-flex > .card,
+  .proyecto-card,
+  .proyecto-flecha,
+  .proyecto-repositorio,
+  .contacto-form .form-control,
+  .contacto-boton,
+  .footer-social {
     transition: none;
   }
 
-  .navbar .nav-underline .nav-link::after {
-    transition: none;
+  .hero-boton:hover,
+  .habilidades .card-body > .d-flex > .card:hover,
+  .proyecto-card:hover,
+  .proyecto-repositorio:hover,
+  .contacto-boton:hover,
+  .footer-social:hover {
+    transform: none;
   }
 }
-

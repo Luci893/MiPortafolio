@@ -11,6 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
+    <!-- Link iconos Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <link rel="stylesheet" href="style.css">
     <title>Mi Portafolio</title>
 </head>
@@ -18,7 +21,7 @@
 
     <header>
     <!-- Navegador -->
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-lg">
             <a class="navbar-brand" href="#">luciana.</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir Menu">
@@ -34,13 +37,13 @@
                       <a class="nav-link" href="#acerca">Acerca de mí</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Mis habilidades</a>
+                      <a class="nav-link" href="#habilidades">Mis habilidades</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Mis proyectos</a>
+                      <a class="nav-link" href="#proyectos">Mis proyectos</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Contacto</a>
+                      <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -50,6 +53,7 @@
 
     <main>
 
+      <!-- SECCIóN INICIO -->
       <section class="hero" id="hero">
         <div class="container">
           <div class="row align-items-center">
@@ -95,57 +99,700 @@
         </div>
       </section>
 
+      <!-- SECCION ACERCA DE MI -->
       <section class="acerca" id="acerca">
-        <div class="container align-items-center">
-          <h3 class="acerca-titulo mb-4">Acerca de mí</h3>
-          <p class="">
+        <div class="container">
+
+          <h3 class="titulo-seccion">Acerca de mí</h3>
+
+          <div class="acerca-descripcion">
+            <p class="texto-descriptivo">
             Soy desarrolladora Full Stack Junior con formación práctica en todo el ciclo de una aplicación web: desde la
             interfaz hasta la lógica de negocio, las APIs y la persistencia de datos. Disfruto transformar necesidades en 
             soluciones digitales útiles, claras y fáciles de mantener.
-          </p>
-          <p class="">
-            Trabajo principalmente con <b>Java, Spring Boot, JavaScript y MySQL</b>, escribiendo código comprensible y comunicando 
-            mis decisiones para que el trabajo en equipo fluya. Busco una oportunidad donde pueda aportar responsabilidad, 
-            curiosidad y una mirada integral del producto, sumar valor desde el primer día y seguir creciendo con desafíos 
-            reales.
-          </p>
-          <hr>
+            </p>
+            <p class="texto-descriptivo">
+            Trabajo principalmente con <strong>Java, Spring Boot, JavaScript y MySQL</strong>, escribiendo código comprensible 
+            y comunicando mis decisiones para que el trabajo en equipo fluya. Busco una oportunidad donde pueda aportar 
+            responsabilidad, curiosidad y una mirada integral del producto, sumar valor desde el primer día y seguir creciendo 
+            con desafíos reales.
+            </p>
+          </div>
 
-          <div class="row align-items-center">
-            <div class="col-lg-4">
-              <h5>Full Stack</h5>
+          <hr class="acerca-separador">
+
+          <div class="row acerca-caracteristicas">
+
+            <div class="col-12 col-md-4 acerca-caracteristica">
+              <h6>Full Stack</h6>
               <p class="acerca-parrafo">Visión integral del producto</p>
             </div>
-            <div class="col-lg-4">
-              <h5>Resolutiva</h5>
+            <div class="col-12 col-md-4 acerca-caracteristica">
+              <h6>Resolutiva</h6>
               <p class="acerca-parrafo">Foco en soluciones claras</p>
             </div>
-            <div class="col-lg-4">
-              <h5>Colaborativa</h5>
+            <div class="col-12 col-md-4 acerca-caracteristica">
+              <h6>Colaborativa</h6>
               <p class="acerca-parrafo">Comunicación y equipo</p>
             </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECCIÓN MIS HABILIDADES -->
+      <section class="habilidades" id="habilidades">
+        <div class="container">
+
+          <h3 class="titulo-seccion">Mis Habilidades</h3>
+          <p class="texto-descriptivo">Tecnologías que utilizo para crear experiencias web completas, desde la interfaz hasta el
+            despliegue.</p>
+
+          <!-- Contenedor de las cajas -->
+          <div class="row g-4">
+
+            <!-- Caja de Frontend -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <p class="card-title">Frontend</p>
+
+                  <!-- Tecnologías de esta caja -->
+                  <div class="d-flex flex-wrap gap-3">
+
+                    <!-- html -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                       alt="Logo de HTML5" class="tecnologia-logo"/>
+                      <p class="mb-0">HTML5</p>
+                    </div>
+
+                    <!-- css -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                       alt="Logo de CSS3" class="tecnologia-logo"/>
+                      <p class="mb-0">CSS3</p>
+                    </div>
+
+                    <!-- javascript -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                       alt="Logo de JavaScript" class="tecnologia-logo"/>
+                      <p class="mb-0">JavaScript</p>
+                    </div>
+
+                    <!-- bootstrap -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                       alt="Logo de Bootstrap" class="tecnologia-logo"/>
+                      <p class="mb-0">Bootstrap</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Caja de Backend -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <p class="card-title">Backend</p>
+
+                  <!-- Tecnologías de esta caja -->
+                  <div class="d-flex flex-wrap gap-3">
+
+                    <!-- java -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                       alt="Logo de Java" class="tecnologia-logo"/>
+                      <p class="mb-0">Java</p>
+                    </div>
+
+                    <!-- spring boot -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+                       alt="Logo de Spring Boot" class="tecnologia-logo"/>
+                      <p class="mb-0">Spring Boot</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Caja de Base de Datos -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <p class="card-title">Base de Datos</p>
+
+                  <!-- Tecnologías de esta caja -->
+                  <div class="d-flex flex-wrap gap-3">
+
+                    <!-- mysql -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                       alt="Logo de MySQL" class="tecnologia-logo"/>
+                      <p class="mb-0">MySQL</p>
+                    </div>
+
+                    <!-- mongoDB -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                       alt="Logo de MongoDB" class="tecnologia-logo"/>
+                      <p class="mb-0">MongoDB</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Caja de Herramientas & DevOps -->
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <p class="card-title">Herramientas & DevOps</p>
+
+                  <!-- Tecnologías de esta caja -->
+                  <div class="d-flex flex-wrap gap-3">
+
+                    <!-- github -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                       alt="Logo de GitHub" class="tecnologia-logo"/>
+                      <p class="mb-0">GitHub</p>
+                    </div>
+
+                    <!-- docker -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                       alt="Logo de Docker" class="tecnologia-logo"/>
+                      <p class="mb-0">Docker</p>
+                    </div>
+
+                    <!-- postman -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
+                       alt="Logo de Postman" class="tecnologia-logo"/>
+                      <p class="mb-0">Postman</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Caja de Conocimientos en Desarrollo -->
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <p class="card-title">Conocimientos en Desarrollo</p>
+
+                  <!-- Tecnologías de esta caja -->
+                  <div class="d-flex flex-wrap gap-3">
+
+                    <!-- react -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                       alt="Logo de React" class="tecnologia-logo"/>
+                      <p class="mb-0">React</p>
+                    </div>
+
+                    <!-- python -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                       alt="Logo de Python" class="tecnologia-logo"/>
+                      <p class="mb-0">Python</p>
+                    </div>
+                    
+                    <!-- flutter -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+                       alt="Logo de Flutter" class="tecnologia-logo"/>
+                      <p class="mb-0">Flutter</p>
+                    </div>
+
+                    <!-- kubernetes -->
+                    <div class="card text-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg"
+                       alt="Logo de Postman" class="tecnologia-logo"/>
+                      <p class="mb-0">kubernetes</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div> <!-- Termina contenedor de las cajas --> 
+
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="proyectos" id="proyectos">
+        <div class="container">
 
+          <h3 class="titulo-seccion">Mis Proyectos</h3>
+          <p class="texto-descriptivo">Algunos en los proyectos que trabajé, las tecnologías que utilicé y las soluciones que desarrollé</p>
+
+          <!-- PROYECTOS -->
+          <div class="row g-4">
+
+            <!-- Proyecto 1: Sistema Inventario -->
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="proyecto-card">
+
+                <!-- Carrusel propio de proyecto 1 -->
+                <div id="carruselInventario"
+                     class="carousel slide proyecto-preview preview-rosa"
+                     data-bs-ride="false">
+
+                  <div class="carousel-inner preview-ventana">
+                  
+                    <div class="carousel-item active">
+                      <img src="images/img_inventario_1.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Inventario ITU: inicio de sesión">
+                    </div>
+                  
+                    <div class="carousel-item">
+                      <img src="images/img_inventario_2.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Inventario ITU: cargar máquinas">
+                    </div>
+                  
+                    <div class="carousel-item">
+                      <img src="images/img_inventario_3.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Inventario ITU: visualizar detalles de máquina">
+                    </div>
+
+                    <div class="carousel-item">
+                      <img src="images/img_inventario_4.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Inventario ITU: listado de máquinas">
+                    </div>
+                  
+                  </div>
+                
+                  <!-- INDICADORES DE LAS 4 CAPTURAS -->
+                  <div class="carousel-indicators proyecto-indicadores">
+                    <button type="button"
+                            data-bs-target="#carruselInventario"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Captura 1 de Sistema Inventario"></button>
+                  
+                    <button type="button"
+                            data-bs-target="#carruselInventario"
+                            data-bs-slide-to="1"
+                            aria-label="Captura 2 de Sistema Inventario"></button>
+                  
+                    <button type="button"
+                            data-bs-target="#carruselInventario"
+                            data-bs-slide-to="2"
+                            aria-label="Captura 3 de Sistema Inventario"></button>
+                    
+                    <button type="button"
+                            data-bs-target="#carruselInventario"
+                            data-bs-slide-to="3"
+                            aria-label="Captura 4 de Sistema Inventario"></button>
+                  </div>
+                
+                  <!-- FLECHAS -->
+                  <button class="carousel-control-prev proyecto-flecha"
+                          type="button"
+                          data-bs-target="#carruselInventario"
+                          data-bs-slide="prev"
+                          aria-label="Imagen anterior de Inventario">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="carousel-control-next proyecto-flecha"
+                          type="button"
+                          data-bs-target="#carruselInventario"
+                          data-bs-slide="next"
+                          aria-label="Imagen siguiente de Inventario">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </button>
+                
+                  <span class="proyecto-contador">01 / 04</span>
+                </div>
+              
+                <!-- Información de SISTEMA INVENTARIO -->
+                <div class="proyecto-info">
+                
+                  <p class="proyecto-categoria categoria-rosa">
+                    Gestión de inventario
+                  </p>
+                
+                  <h3 class="proyecto-titulo">Sistema Inventario ITU</h3>
+                
+                  <p class="proyecto-descripcion">
+                    Sistema web desarrollado como proyecto integrador para la Universidad Tecnológica (ITU) para gestionar el inventario de 
+                    equipos de laboratorio, con acceso diferenciado según el rol del usuario. Me encargué del frontend y de su integración 
+                    con el backend.
+                  </p>
+                
+                  <div class="proyecto-pie">
+                  
+                    <div class="proyecto-tecnologias">
+                      <span>HTML5</span>
+                      <span>JavaScript</span>
+                      <span>Bootstrap 5</span>
+                      <span>FastAPI</span>
+                      <span>SQL Server</span>
+                      <span>MongoDB</span>
+                    </div>
+                  
+                    <a href="https://github.com/MartinZ18/Proyecto-Inventario-EGI"
+                       class="proyecto-repositorio"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                      <span>Ver repositorio en GitHub</span>
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                  
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Proyecto 2: Sistema Gestión Menú -->
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="proyecto-card">
+
+                <!-- Carrusel propio de proyecto 2 -->
+                <div id="carruselMenu"
+                     class="carousel slide proyecto-preview preview-rosa"
+                     data-bs-ride="false">
+
+                  <div class="carousel-inner preview-ventana">
+                  
+                    <div class="carousel-item active">
+                      <img src="images/img_menu_1.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Gestión Menú: panel de inicio">
+                    </div>
+                  
+                    <div class="carousel-item">
+                      <img src="images/img_menu_2.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Gestión Menú: creación de menú">
+                    </div>
+                  
+                    <div class="carousel-item">
+                      <img src="images/img_menu_3.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Gestión Menú: cargar receta del menú">
+                    </div>
+
+                    <div class="carousel-item">
+                      <img src="images/img_menu_4.png"
+                           class="proyecto-imagen"
+                           alt="Sistema Gestión Menú: visualización de menús">
+                    </div>
+                  
+                  </div>
+                
+                  <!-- INDICADORES DE LAS 3 CAPTURAS -->
+                  <div class="carousel-indicators proyecto-indicadores">
+                    <button type="button"
+                            data-bs-target="#carruselMenu"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Captura 1 de Sistema Menú"></button>
+                  
+                    <button type="button"
+                            data-bs-target="#carruselMenu"
+                            data-bs-slide-to="1"
+                            aria-label="Captura 2 de Sistema Menú"></button>
+                  
+                    <button type="button"
+                            data-bs-target="#carruselMenu"
+                            data-bs-slide-to="2"
+                            aria-label="Captura 3 de Sistema Menú"></button>
+                    
+                    <button type="button"
+                            data-bs-target="#carruselMenu"
+                            data-bs-slide-to="3"
+                            aria-label="Captura 4 de Sistema Menú"></button>
+                  </div>
+                
+                  <!-- FLECHAS -->
+                  <button class="carousel-control-prev proyecto-flecha"
+                          type="button"
+                          data-bs-target="#carruselMenu"
+                          data-bs-slide="prev"
+                          aria-label="Imagen anterior de Menú">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="carousel-control-next proyecto-flecha"
+                          type="button"
+                          data-bs-target="#carruselMenu"
+                          data-bs-slide="next"
+                          aria-label="Imagen siguiente de Menú">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </button>
+                
+                  <span class="proyecto-contador">01 / 04</span>
+                </div>
+              
+                <!-- Información de SISTEMA GESTIÓN MENÚ -->
+                <div class="proyecto-info">
+                
+                  <p class="proyecto-categoria categoria-rosa">
+                    Gestión de Menús
+                  </p>
+                
+                  <h3 class="proyecto-titulo">Sistema Gestión de Menús</h3>
+                
+                  <p class="proyecto-descripcion">
+                    Aplicación web para la gestión integral de menús de un restaurante. Permite crear un menú junto con sus alimentos, 
+                    recetas, ingredientes y chef, guardando toda su estructura de forma anidada mediante relaciones y operaciones en 
+                    cascada.
+                  </p>
+                
+                  <div class="proyecto-pie">
+                  
+                    <div class="proyecto-tecnologias">
+                      <span>Java 17</span>
+                      <span>Spring Boot</span>
+                      <span>JPA</span>
+                      <span>Hibernate</span>
+                      <span>MySQL</span>
+                      <span>Postman</span>
+                    </div>
+                  
+                    <a href="https://github.com/Luci893/ProyectoGestionMenu"
+                       class="proyecto-repositorio"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                      <span>Ver repositorio en GitHub</span>
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                  
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Proyecto 3: Control de Stock Panaderia -->
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="proyecto-card">
+
+                <!-- Carrusel propio de proyecto 3 -->
+                <div id="carruselPanaderia"
+                     class="carousel slide proyecto-preview preview-rosa"
+                     data-bs-ride="false">
+
+                  <div class="carousel-inner preview-ventana">
+                  
+                    <div class="carousel-item active">
+                      <img src="images/img_panaderia_1.png"
+                           class="proyecto-imagen"
+                           alt="Aplicación Panadería: cargar ingrediente">
+                    </div>
+                  
+                    <div class="carousel-item">
+                      <img src="images/img_panaderia_2.png"
+                           class="proyecto-imagen"
+                           alt="Aplicación Panadería: mensaje de confirmación">
+                    </div>
+                  
+                    <div class="carousel-item">
+                      <img src="images/img_panaderia_3.png"
+                           class="proyecto-imagen"
+                           alt="Aplicación Panadería: registrar movimiento">
+                    </div>
+
+                    <div class="carousel-item">
+                      <img src="images/img_panaderia_4.png"
+                           class="proyecto-imagen"
+                           alt="Aplicación Panadería: panel historial de movimientos">
+                    </div>
+                  
+                  </div>
+                
+                  <!-- INDICADORES DE LAS 3 CAPTURAS -->
+                  <div class="carousel-indicators proyecto-indicadores">
+                    <button type="button"
+                            data-bs-target="#carruselPanaderia"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Captura 1 de Aplicación Panaderia"></button>
+                  
+                    <button type="button"
+                            data-bs-target="#carruselPanaderia"
+                            data-bs-slide-to="1"
+                            aria-label="Captura 2 de Aplicación Panaderia"></button>
+                  
+                    <button type="button"
+                            data-bs-target="#carruselPanaderia"
+                            data-bs-slide-to="2"
+                            aria-label="Captura 3 de Aplicación Panaderia"></button>
+                    
+                    <button type="button"
+                            data-bs-target="#carruselPanaderia"
+                            data-bs-slide-to="3"
+                            aria-label="Captura 4 de Aplicación Panaderia"></button>
+                  </div>
+                
+                  <!-- FLECHAS -->
+                  <button class="carousel-control-prev proyecto-flecha"
+                          type="button"
+                          data-bs-target="#carruselPanaderia"
+                          data-bs-slide="prev"
+                          aria-label="Imagen anterior de Panaderia">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="carousel-control-next proyecto-flecha"
+                          type="button"
+                          data-bs-target="#carruselPanaderia"
+                          data-bs-slide="next"
+                          aria-label="Imagen siguiente de Panaderia">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </button>
+                
+                  <span class="proyecto-contador">01 / 04</span>
+                </div>
+              
+                <!-- Información de GESTIÓN DE STOCK -PANADERIA -->
+                <div class="proyecto-info">
+                
+                  <p class="proyecto-categoria categoria-rosa">
+                    Gestión de Stock - Panaderia
+                  </p>
+                
+                  <h3 class="proyecto-titulo">Aplicación Panaderia "Los Abuelos"</h3>
+                
+                  <p class="proyecto-descripcion">
+                    Aplicación web progresiva (PWA) para gestionar el stock de ingredientes de una panadería. Permite controlar ingresos
+                    y egresos, consultar el historial de movimientos y establecer alertas visuales según los niveles de stock.
+                  </p>
+                
+                  <div class="proyecto-pie">
+                  
+                    <div class="proyecto-tecnologias">
+                      <span>JavaScript</span>
+                      <span>HTML5</span>
+                      <span>CSS3</span>
+                      <span>Bootstrap</span>
+                      <span>Firebase</span>
+                      <span>PWA</span>
+                    </div>
+                  
+                    <a href="https://github.com/Luci893/app_panaderia"
+                       class="proyecto-repositorio"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                      <span>Ver repositorio en GitHub</span>
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                  
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          </div> <!-- Termina div de proyectos -->
+        </div>
       </section>
 
-      <section>
+      <section class="contacto" id="contacto">
+        <div class="container">
 
+          <div class="row align-items-center contacto-fila">
+
+            <!-- Columna del texto -->
+            <div class="col-12 col-lg-5 contacto-texto">
+              <h3 class="titulo-seccion">Contacto</h3>
+              <p class="contacto-descripcion">
+                Estoy buscando una oportunidad para integrarme a un equipo, aportar en proyectos reales y seguir 
+                creciendo como desarrolladora Full Stack.
+              </p>
+              <p class="contacto-pregunta">¿Crees que puedo encajar en tu equipo?</p>
+              <span class="contacto-indicacion">Completa el formulario y conversemos.</span>
+            </div>
+
+            <!-- Columna del formulario -->
+            <div class="col-12 col-lg-7 contacto-form-columna">
+              <form class="contacto-form" id="formContacto" action="https://formspree.io/f/xoejlzna" method="post">
+
+                <div class="contacto-campos">
+                  <div class="form-group">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre" name="nombre" placeholder="Tu Nombre" 
+                    required minlength="2" maxlength="80" autocomplete="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="tu@gmail.com"
+                    required maxlength="120" autocomplete="email">
+                  </div>
+                </div>
+
+                <div class="form-group contacto-mensaje">
+                  <label for="inputMensaje">Mensaje</label>
+                  <textarea class="form-control" id="inputMensaje" name="mensaje" rows="4" 
+                  placeholder="Cuéntame sobre la oportunidad o el proyecto" required minlength="10" maxlength="1500"></textarea>
+                </div>
+
+                <!-- Campo trampa: las personas no lo ven, los bots sí lo llenan -->
+                <input type="text" name="_gotcha" class="d-none" tabindex="-1" autocomplete="off">
+
+                <button type="submit" class="contacto-boton">
+                  <i class="bi bi-send" aria-hidden="true"></i>
+                  <span>Enviar mensaje</span>
+                </button>
+
+                <!-- Acá se muestra "Enviando...", "Enviado" o el error -->
+                <p id="formEstado" class="form-estado" role="status" aria-live="polite"></p>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
       </section>
 
-      <section>
-
-      </section>
     </main>
 
-    <footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-contenido">
 
+          <p class="footer-copyright">© 2026 Luciana Torres</p>
+
+          <p class="footer-frase">Diseñado y desarrollado con dedicación.</p>
+
+          <div class="footer-redes">
+            <a href="https://github.com/Luci893" class="footer-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="bi bi-github" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/luciana-torres-772938337/" class="footer-social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
     </footer>
-
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
