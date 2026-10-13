@@ -782,6 +782,13 @@ body {
   opacity: 1;
 }
 
+/* Flechas ocultas tras hacer clic en la imagen. 
+Lleva 3 clases a propósito: así le gana al hover y a la regla de pantallas chicas */
+.proyecto-preview .proyecto-flecha.sin-flechas {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Fondo de las flechas */
 .proyecto-flecha .carousel-control-prev-icon,
 .proyecto-flecha .carousel-control-next-icon {
@@ -1390,6 +1397,16 @@ body {
     max-width: 400px;
   }
 
+  /* PARA SECCIÓN PROYECTO */
+
+  .proyecto-info {
+    padding: 26px 20px 22px;
+  }
+
+  .proyecto-titulo {
+    font-size: 23px;
+  }
+
   /* SECCIÓN CONTACTO */
   .contacto {
     padding: 64px 0 72px;
@@ -1444,13 +1461,6 @@ body {
   }
 
   /* SECCIÓN PROYECTOS */
-  .proyecto-info {
-    padding: 26px 20px 22px;
-  }
-
-  .proyecto-titulo {
-    font-size: 23px;
-  }
 
   .proyecto-tecnologias {
     gap: 6px;
@@ -1510,19 +1520,6 @@ body {
   .proyecto-preview {
     aspect-ratio: 16 / 7.5;
     padding: 8px 8px 0;
-  }
-
-  .proyecto-info {
-    padding: 26px 20px 22px;
-  }
-
-  .proyecto-titulo {
-    font-size: 23px;
-  }
-
-  /* Las flechas siempre están visibles en pantallas táctiles */
-  .proyecto-flecha {
-    opacity: 1;
   }
 }
 

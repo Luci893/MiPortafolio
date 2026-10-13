@@ -7,7 +7,7 @@ document.querySelectorAll('.proyecto-preview').forEach((carrusel) => {
   const contador = carrusel.querySelector('.proyecto-contador');
   const total = carrusel.querySelectorAll('.carousel-item').length;
 
-  // Convierte 1 en "01", 4 en "04", etc.
+  // Rellena el inicio, convierte 1 en "01", 4 en "04", etc.
   const formato = (numero) => String(numero).padStart(2, '0');
 
   // Estado inicial: "01 / 04"
@@ -19,6 +19,35 @@ document.querySelectorAll('.proyecto-preview').forEach((carrusel) => {
     contador.textContent = `${formato(evento.to + 1)} / ${formato(total)}`;
   });
 });
+
+// Desaparecer/aparecer flechas cuándo se haga click en la imagen del proyecto
+document.querySelectorAll('.proyecto-preview').forEach((carrusel) =>{
+  const imagenes = carrusel.querySelectorAll(".proyecto-imagen");
+  const flechas = carrusel.querySelectorAll(".proyecto-flecha");
+
+  imagenes.forEach((imagen) =>{
+    imagen.addEventListener('click', ()=>{
+      flechas.forEach((flecha) =>{
+        flecha.classList.toggle("sin-flechas");
+      });
+    });
+  });
+});
+
+// Observador que reinicia el contador del carrrusel de imagenes cuando sale del viewport
+const observer = new IntersectionObserver((entries) =>{
+  entries.forEach((entry) =>{
+    if(!entry.isIntersecting){
+      // Cuando el carrusel sale del viewport, IntersectionObserver detecta el evento.
+      // Obtener instancia del carrusel
+      const instancia = bootstrap.Carousel.getOrCreateInstance(entry.target);
+      // Volver a la primera imagen
+      instancia.to(0);
+    }
+  });
+});
+
+document.querySelectorAll('.proyecto-preview').forEach(carrusel => observer.observe(carrusel));
 
 // FORMULARIO DE CONTACTO
 
